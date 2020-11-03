@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mubashar.generalmotorcodingchallenge.R;
 import com.mubashar.generalmotorcodingchallenge.databinding.FragmentMainBinding;
 import com.mubashar.generalmotorcodingchallenge.network.ApiResponse;
 import com.mubashar.generalmotorcodingchallenge.network.Status;
@@ -48,9 +47,15 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.rvCommits.setAdapter(adapter);
+        binding.tvRefresh.setOnClickListener(v -> getAllCommits());
         mainViewModel.getResponseLiveData().observe(getViewLifecycleOwner(), this::consumeResponse);
+        getAllCommits();
+    }
+
+    private void getAllCommits() {
         mainViewModel.getAllCommits();
     }
+
 
     private void consumeResponse(ApiResponse response) {
         Log.d("response", response.toString());
