@@ -1,8 +1,10 @@
-package com.mubashar.generalmotorcodingchallenge;
+package com.mubashar.generalmotorcodingchallenge.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.mubashar.generalmotorcodingchallenge.R;
 
 public class MainActivity extends AppCompatActivity {
 
