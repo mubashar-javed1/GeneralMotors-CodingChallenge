@@ -43,6 +43,7 @@ dependencies {
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.androidx.ext}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.androidx.espresso}"
+    androidTestImplementation "org.mockito:mockito-core:${versions.mockito}"
 
     /* Fragment Navigation */
     implementation "androidx.navigation:navigation-fragment:${versions.androidx.navigation}"
@@ -60,4 +61,8 @@ dependencies {
     /*RxJava lib*/
     implementation "io.reactivex.rxjava2:rxandroid:${versions.reactivex.rxandroid}"
     implementation "io.reactivex.rxjava2:rxjava:${versions.reactivex.rxjava}"
+
+    /* RecyclerView and CardView */
+    implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+    implementation "androidx.cardview:cardview:${versions.recyclerView}"
 }
