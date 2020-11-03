@@ -1,6 +1,7 @@
 package com.mubashar.generalmotorcodingchallenge.repository;
 
 
+import com.mubashar.generalmotorcodingchallenge.model.CommitResponse;
 import com.mubashar.generalmotorcodingchallenge.network.ApiCall;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class RepositoryImp implements Repository {
     }
 
     @Override
-    public Observable<List<String>> getAllCommits() {
+    public Observable<List<CommitResponse>> getAllCommits() {
         return apiCall.getCommits();
     }
 }
