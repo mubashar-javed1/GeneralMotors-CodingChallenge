@@ -14,6 +14,11 @@ buildscript {
             'google'        : [
                     'material'          : '1.2.1'
             ],
+            'squareup'      : [
+                    'gson_converter'    : '2.6.2',
+                    'okhttp3'           : '3.12.1',
+                    'retrofit'          : '2.6.2',
+            ],
     ]
 
     repositories {
