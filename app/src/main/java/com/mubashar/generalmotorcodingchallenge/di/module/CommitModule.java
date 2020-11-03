@@ -1,8 +1,7 @@
-package com.example.generalmotors.di.module;
+package com.mubashar.generalmotorcodingchallenge.di.module;
 
-import com.example.generalmotors.network.ApiCall;
-import com.example.generalmotors.repository.Repository;
-import com.example.generalmotors.repository.RepositoryImp;
+
+import com.mubashar.generalmotorcodingchallenge.network.ApiCall;
 
 import javax.inject.Singleton;
 
@@ -16,11 +15,5 @@ public class CommitModule {
     @Singleton
     ApiCall getApiCallInterface(Retrofit retrofit) {
         return retrofit.create(ApiCall.class);
-    }
-
-    @Provides
-    @Singleton
-    Repository getRepository(ApiCall apiCallInterface) {
-        return new RepositoryImp(apiCallInterface);
     }
 }
