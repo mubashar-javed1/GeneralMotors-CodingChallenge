@@ -1,10 +1,14 @@
 package com.mubashar.generalmotorcodingchallenge.di.module;
 
+import android.content.Context;
+
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mubashar.generalmotorcodingchallenge.BuildConfig;
 import com.mubashar.generalmotorcodingchallenge.network.ApiConfig;
+import com.mubashar.generalmotorcodingchallenge.network.exception.ConnectivityInterceptor;
+import com.mubashar.generalmotorcodingchallenge.network.exception.ConnectivityInterceptorImp;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +25,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class RetrofitModule {
+    private final Context context;
+
+    public RetrofitModule(Context context) {
+        this.context = context;
+    }
+
     @Provides
     @Singleton
     Gson provideGson() {
@@ -49,6 +59,9 @@ public class RetrofitModule {
         loggingInterceptor.setLevel(BuildConfig.DEBUG ?
                 HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE);
         httpClient.addInterceptor(loggingInterceptor);
+        // adding connectivity interceptor
+        ConnectivityInterceptor connectivityInterceptor = new ConnectivityInterceptorImp(context);
+        httpClient.addInterceptor(connectivityInterceptor);
 
         httpClient.addInterceptor(chain -> {
             Request original = chain.request()

@@ -3,6 +3,7 @@ import android.app.Application;
 
 import com.mubashar.generalmotorcodingchallenge.di.component.AppComponent;
 import com.mubashar.generalmotorcodingchallenge.di.component.DaggerAppComponent;
+import com.mubashar.generalmotorcodingchallenge.di.module.RetrofitModule;
 
 
 public class GMApplication extends Application {
@@ -10,7 +11,7 @@ public class GMApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        component = DaggerAppComponent.create();
+        component = DaggerAppComponent.builder().retrofitModule(new RetrofitModule(this)).build();
     }
 
     public AppComponent getComponent() {
