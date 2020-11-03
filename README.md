@@ -3,7 +3,7 @@
 This repository contains a detailed sample app that implements using Java, MVVM architecture (ViewModel, LiveData, DataBinding, ViewBinding and Navigation Component), Dagger, RxJava, RxAndroid, Retrofit, OkHttp3.
 
 <p align="center">
-  <img src="template/demo.gif" width = "320" height="672"/>
+  <img src="images/demo.gif" width = "320" height="672"/>
 </p>
 
 # Architecture Blueprint
@@ -41,8 +41,8 @@ This repository contains a detailed sample app that implements using Java, MVVM 
 6. RxJava2: https://github.com/amitshekhariitbhu/RxJava2-Android-Samples
 7. RxAndroid: https://medium.com/crunching-rxandroid/crunching-rxandroid-intro-c27eb6f009ea
 8. Retrofit: https://github.com/square/retrofit
-9. OkHttp3 (Interceptor): https://github.com/square/okhttp
-10. OkHttp3 (No Network Connection Interceptor): https://medium.com/programming-lite/retrofit-2-handling-network-error-defc7d373ad1
+9. OkHttp3 (Logging Interceptor): https://github.com/square/okhttp
+10. OkHttp3 (Network Connection Interceptor): https://medium.com/programming-lite/retrofit-2-handling-network-error-defc7d373ad1
 
 ### Testing
   1. MainViewModel test
