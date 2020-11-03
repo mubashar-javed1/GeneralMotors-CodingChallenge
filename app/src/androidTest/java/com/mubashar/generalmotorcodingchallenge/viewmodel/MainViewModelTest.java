@@ -38,7 +38,7 @@ public class MainViewModelTest {
     }
 
     @Test
-    public void getCommitsResultTest() {
+    public void getAllCommitsTest() {
         mainViewModel.getAllCommits();
         Mockito.verify(repository).getAllCommits();
     }
