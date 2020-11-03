@@ -54,9 +54,24 @@ public class MainFragment extends Fragment {
 
     private void consumeResponse(ApiResponse response) {
         Log.d("response", response.toString());
-        if (response.status == Status.SUCCESS) {
-            adapter.setCommitResponses(response.data);
+        updateViewsVisibility(response.status);
+        switch (response.status) {
+            case SUCCESS:
+                adapter.setCommitResponses(response.data);
+                break;
+            case ERROR:
+                if (response.error != null)
+                    binding.tvError.setText(response.error.getMessage());
+                break;
+            default:
         }
+    }
+
+    private void updateViewsVisibility(Status status) {
+        binding.progressBar.setVisibility(status == Status.LOADING ? View.VISIBLE : View.GONE);
+        binding.rvCommits.setVisibility(status == Status.SUCCESS ? View.VISIBLE : View.GONE);
+        binding.tvError.setVisibility(status == Status.ERROR ? View.VISIBLE : View.GONE);
+        binding.tvRefresh.setVisibility(status == Status.ERROR ? View.VISIBLE : View.GONE);
     }
 
     @Override
