@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 
 
 public class RepositoryImp implements Repository {
-    private ApiCall apiCall;
+    private final ApiCall apiCall;
 
     public RepositoryImp(ApiCall apiCall) {
         this.apiCall = apiCall;

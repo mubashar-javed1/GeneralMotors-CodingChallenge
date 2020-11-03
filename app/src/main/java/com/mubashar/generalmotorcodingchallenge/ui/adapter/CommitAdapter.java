@@ -53,7 +53,7 @@ public class CommitAdapter extends RecyclerView.Adapter<CommitAdapter.CommitView
     }
 
      static class CommitViewHolder extends RecyclerView.ViewHolder {
-        private ItemCommitBinding itemCommitBinding;
+        private final ItemCommitBinding itemCommitBinding;
         public CommitViewHolder(@NonNull ItemCommitBinding binding) {
             super(binding.getRoot());
             itemCommitBinding = binding;
