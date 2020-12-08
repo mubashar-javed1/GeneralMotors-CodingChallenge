@@ -5,7 +5,9 @@ import com.mubashar.generalmotorcodingchallenge.di.component.AppComponent;
 import com.mubashar.generalmotorcodingchallenge.di.component.DaggerAppComponent;
 import com.mubashar.generalmotorcodingchallenge.di.module.RetrofitModule;
 
-
+/*
+* Main application
+* */
 public class GMApplication extends Application {
     AppComponent component;
     @Override

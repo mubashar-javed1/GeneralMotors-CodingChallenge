@@ -2,7 +2,7 @@
 buildscript {
 
     ext.versions = [
-            'gradle'        : '4.1.0',
+            'gradle'        : '4.1.1',
             'junit'         : '4.13.1',
             'daggerVersion' : '2.29.1',
             'androidx'      : [
